@@ -1,5 +1,5 @@
 Package: metagene
-Version: 2.10.0
+Version: 2.10.1
 Date: 2017-10-13
 Title: A package to produce metagene plots
 Author: Charles Joly Beauparlant 
@@ -62,6 +62,7 @@ Imports:
 Suggests:
     RUnit,
     BiocGenerics,
+    similaRpeak,
     knitr,
     BiocStyle,
     rmarkdown
