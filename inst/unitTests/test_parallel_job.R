@@ -69,7 +69,7 @@ test.parallel_job_launch_job_valid_multiple_core <- function() {
 test.parallel_job_get_core_count_valid_single_core <- function() {
     parallel_job <- metagene:::Parallel_Job$new(cores = 1)
     obs <- parallel_job$get_core_count()
-    exp <- 1
+    exp <- 1L
     checkIdentical(obs, exp)
 }
 
@@ -77,7 +77,7 @@ test.parallel_job_get_core_count_valid_single_core <- function() {
 test.parallel_job_get_core_count_valid_multiple_core <- function() {
     parallel_job <- metagene:::Parallel_Job$new(cores = 2)
     obs <- parallel_job$get_core_count()
-    exp <- 2
+    exp <- 2L
     checkIdentical(obs, exp)
 }
 
@@ -87,7 +87,7 @@ test.parallel_job_get_core_count_valid_multiple_core_biocparallelparam <-
     cores <- BiocParallel::SnowParam(workers = 2)
     parallel_job <- metagene:::Parallel_Job$new(cores = cores)
     obs <- parallel_job$get_core_count()
-    exp <- 2
+    exp <- 2L
     checkIdentical(obs, exp)
 }
 
@@ -100,7 +100,7 @@ test.parallel_job_set_core_count_valid_single_core <- function() {
     parallel_job <- metagene:::Parallel_Job$new(cores = 2)
     parallel_job$set_core_count(cores = 1)
     obs <- parallel_job$get_core_count()
-    exp <- 1
+    exp <- 1L
     checkIdentical(obs, exp)
 }
 
@@ -109,7 +109,7 @@ test.parallel_job_set_core_count_valid_multiple_core <- function() {
     parallel_job <- metagene:::Parallel_Job$new(cores = 1)
     parallel_job$set_core_count(cores = 2)
     obs <- parallel_job$get_core_count()
-    exp <- 2
+    exp <- 2L
     checkIdentical(obs, exp)
 }
 
@@ -119,7 +119,7 @@ test.parallel_job_set_core_count_valid_multiple_core_biocparallelparam <-
     parallel_job <- metagene:::Parallel_Job$new(cores = 1)
     parallel_job$set_core_count(cores = BiocParallel::SnowParam(workers = 2))
     obs <- parallel_job$get_core_count()
-    exp <- 2
+    exp <- 2L
     checkIdentical(obs, exp)
 }
 
